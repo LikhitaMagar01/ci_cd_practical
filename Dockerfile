@@ -1,8 +1,4 @@
 FROM node:18.16.0 as builder
-
-# Install build dependencies
-RUN apk --no-cache add --virtual builds-deps build-base python
-
 WORKDIR /app
 COPY package*.json ./
 RUN yarn install --production
