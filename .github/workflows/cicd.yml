@@ -36,7 +36,7 @@ jobs:
       - name: BUild docker image
         run: docker build -t leekhitame/ci_cd_practical .
       - name: Login to docker hub
-        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p "${{ secrets.DOCKER_PASSWORD }}"      
       - name: Publish image to docker hub
         run: docker push leekhitame/ci_cd_practical:latest
   #     - name: Detect package manager
